@@ -6,6 +6,7 @@ def f(current_dir,index,level):
     for i in range(index,max_index+1):
         new_path=os.path.join(current_dir,str(i))
         p=pathlib.Path(new_path); p.mkdir(exist_ok=True)
+        global count
         count=count+1
         # print(new_path,"Created")
 
@@ -14,8 +15,8 @@ def f(current_dir,index,level):
 
 start_time=time.time()
 curr_path=pathlib.Path.cwd()
-max_level=5
-max_index=9
+max_level=4
+max_index=100
 count=0
 
 f(curr_path,0,0)
