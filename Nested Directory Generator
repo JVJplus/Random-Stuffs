@@ -1,0 +1,24 @@
+import os,sys,pathlib,time
+
+def f(current_dir,index,level):
+    if(level>=max_level):
+        return
+    for i in range(index,max_index+1):
+        new_path=os.path.join(current_dir,str(i))
+        p=pathlib.Path(new_path); p.mkdir(exist_ok=True)
+        count=count+1
+        # print(new_path,"Created")
+
+        f(new_path,0,level+1)
+
+
+start_time=time.time()
+curr_path=pathlib.Path.cwd()
+max_level=5
+max_index=9
+count=0
+
+f(curr_path,0,0)
+
+print("--- %s seconds ---" % (round((time.time() - start_time),3)))
+print(count,"Files Created.")
