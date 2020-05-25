@@ -15,8 +15,8 @@ def f(current_dir,index,level):
 
 start_time=time.time()
 curr_path=pathlib.Path.cwd()
-max_level=4
-max_index=100
+max_level=3
+max_index=10
 count=0
 
 f(curr_path,0,0)
